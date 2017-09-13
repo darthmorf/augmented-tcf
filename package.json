@@ -1,0 +1,67 @@
+{
+  "name": "augmented-tcf-extension",
+  "product_name": "Augmented TCF",
+  "version": "2.0.0",
+  "private": true,
+  "description": "A web extension that adds all the features you wanted for Terraria's official Community Forums and more.",
+  "author": "Calvin \"Everest\" Watford",
+  "homepage": "https://forums.terraria.org/index.php?threads/atcf.12268/",
+  "keywords": [
+    "augmented tcf",
+    "browser extension",
+    "terraria"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clavin/augmented-tcf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/clavin/augmented-tcf/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:prod": "cross-env NODE_ENV=production webpack",
+    "build:dev": "cross-env NODE_ENV=development webpack",
+    "watch": "cross-env NODE_ENV=development webpack --watch",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
+  },
+  "config": {
+    "manifest.json": {
+      "permissions": [
+        "*://forums.terraria.org/*",
+        "notificiations",
+        "storage"
+      ],
+      "web_accessible_resources": [],
+      "background": {
+        "scripts": [
+          "background.main.js"
+        ]
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "*://forums.terraria.org/*"
+          ],
+          "js": [
+            "main.bundle.js"
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.0.5",
+    "ts-loader": "^2.3.7",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2",
+    "webpack": "^3.5.6",
+    "zip-webpack-plugin": "^2.0.0"
+  }
+}

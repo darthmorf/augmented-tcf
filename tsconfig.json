@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "lib": ["dom", "es6", "dom.iterable"],
+    "noImplicitAny": true
+  }
+}
