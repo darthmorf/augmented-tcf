@@ -30,13 +30,13 @@
     "manifest.json": {
       "permissions": [
         "*://forums.terraria.org/*",
-        "notificiations",
+        "notifications",
         "storage"
       ],
       "web_accessible_resources": [],
       "background": {
         "scripts": [
-          "background.main.js"
+          "background.bundle.js"
         ]
       },
       "content_scripts": [
