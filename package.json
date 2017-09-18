@@ -36,6 +36,7 @@
       "web_accessible_resources": [],
       "background": {
         "scripts": [
+          "common.bundle.js",
           "background.bundle.js"
         ]
       },
@@ -45,14 +46,17 @@
             "*://forums.terraria.org/*"
           ],
           "js": [
+            "common.bundle.js",
             "main.bundle.js"
-          ]
+          ],
+          "run_at": "document_start"
         }
       ]
     }
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "webextension-polyfill": "^0.1.1"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.16",
