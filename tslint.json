@@ -1,7 +1,7 @@
 {
   "extends": "tslint:latest",
   "rules": {
-    "max-line-length": [120],
+    "max-line-length": [true, 120],
     "member-access": [true, "check-accessor", "check-constructor"],
     "member-ordering": [
       true,
